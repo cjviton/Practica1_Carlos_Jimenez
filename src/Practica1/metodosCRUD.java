@@ -65,14 +65,15 @@ public static int pedirInt(String texto) {
 }
 
 
+
 	//método para que muestre el contenido de un array de String
 
 public static void muestraArrayS(String[] array) {
-	System.out.println("Esta es tu lista  ");
 	  for (int i = 0; i < array.length; i++) {
 	    System.out.print(array[i] + " ,");
 	  }
 	}	
+
 
 
 	//método para que muestre el contenido de un array de Int
@@ -83,5 +84,62 @@ public static void muestraArrayI(int[] array) {
 	    System.out.print(array[i] + " ,");
 	  }
 	}	
+
+
+
+    //Método para que me devuelva el numero de null o "" que hay en un string
+
+public static int NumeroNull(String[] lista) {
+	
+	int longitud=lista.length;
+	int contador=0;
+	
+	for(int i=0;i<longitud; i++) {
+		if(lista[i]==null|| lista[i].equals("")){
+			contador++;
+		}
+	}
+	
+	return contador;
+	
+}
+
+
+   //Método para mostrar texto
+
+public static void mostrarTexto(String texto) {
+	
+	System.out.println(texto);
+}
+
+
+   //Método para buscar la pusición de un String dentro de un array
+
+public static int buscarPosicionArray(String[] lista, String nombre) {
+	
+	int longitud=lista.length;
+	int i=0;
+	int posicion=-1;
+	boolean encontrado=false;
+	
+	if(longitud>0) {
+		do {
+			if(lista[i].equals(nombre)) {
+				posicion=i;
+				encontrado=true;
+			}
+			i++;
+		}while(i<longitud && !encontrado); 
+	}
+	
+	
+	return posicion;
+	
+}
+
+
+
+
+	
 
 }

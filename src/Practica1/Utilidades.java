@@ -196,7 +196,7 @@ public class Utilidades {
 	// 1 CREO UN MÉTODO QUE AÑADA EL ARRAY palabras
 	
 	
-		private static void anadirPalabras (String[]palabras, int posicion) {
+		public static void anadirPalabras (String[]palabras, int posicion) {
 			
 			palabras[posicion]="hola";
 		}	
@@ -204,7 +204,7 @@ public class Utilidades {
 		
 		// 2 CREO UN MÉTODO QUE BUSQUE EN TODO EL ARRAY buscarTodoArray
 			
-		private static void	buscarTodoArray (String[] lista, String nombre) {  //este nombre del array no tiene que ser igual que el array
+		public static void	buscarTodoArray (String[] lista, String nombre) {  //este nombre del array no tiene que ser igual que el array
 			int longitud=lista.length;										   //de arriba. este solo es para el método
 			for (int i=0;i<longitud;i++) {
 				if(lista[i].equals(nombre)) {
@@ -217,7 +217,7 @@ public class Utilidades {
 		// 3 CREO UN MÉTODO QUE ME DEVUELVE EL NÚMERO DE PERSONAS CON UN DETERMINADO NOMBRE 
 		
 		
-		private static int buscarNumeroNombre(String[] lista, String nombre) {
+		public static int buscarNumeroNombre(String[] lista, String nombre) {
 			
 			int longitud=lista.length;
 			int contador=0;
@@ -236,7 +236,7 @@ public class Utilidades {
 		// 4 CREO UN MÉTODO QUE ME DEVUELVA LA POSICIÓN EN LA QUE ESTA LO QUE BUSCO
 		
 		
-		private static int buscarPosicionNombre(String[] lista, String nombre) {
+		public static int buscarPosicionNombre(String[] lista, String nombre) {
 			
 			int longitud=lista.length;
 			int i=0;
