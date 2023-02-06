@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class metodosCRUD {
 
 
+	//Método parapedir un número entero dentro de un rango
 	
 public static int pedirIntRango(String texto, int inicio, int fin) {
 
@@ -31,6 +32,7 @@ public static int pedirIntRango(String texto, int inicio, int fin) {
 
 
 
+	//Método para pedir un palabra
 
 public static String pedirString(String texto) {
 
@@ -47,7 +49,8 @@ public static String pedirString(String texto) {
 
 
 
-	
+	//Método para pedir un número entero
+
 public static int pedirInt(String texto) {
 
 	int numero;
@@ -62,18 +65,23 @@ public static int pedirInt(String texto) {
 }
 
 
+	//método para que muestre el contenido de un array de String
+
+public static void muestraArrayS(String[] array) {
+	System.out.println("Esta es tu lista  ");
+	  for (int i = 0; i < array.length; i++) {
+	    System.out.print(array[i] + " ,");
+	  }
+	}	
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	//método para que muestre el contenido de un array de Int
+
+
+public static void muestraArrayI(int[] array) {
+	  for (int i = 0; i < array.length; i++) {
+	    System.out.print(array[i] + " ,");
+	  }
+	}	
 
 }

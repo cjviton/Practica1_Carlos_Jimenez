@@ -46,43 +46,35 @@ public class GestionCRUD {
 	    while(opcion !=5) { //El switch se debe repetir hasta que elija la opción 5 Salir
 	     
 	    	//Pregunto al usuario que opcion quiere realizar. Con el método pedir rango si introduce un número que no es corecto le marcará el error
-	        opcion=metodosCRUD.pedirIntRango("¿Qué quiere hacer?\n\n 1.-Añadir una montaña\n 2.-Modificar una montaña\n 3.-Eliminar una montaña\n 4.-Buscar una montaña\n 5.-Salir", 1, 5);
+	        opcion=metodosCRUD.pedirIntRango("\n¿Qué quiere hacer?\n\n 1.-Añadir una montaña\n 2.-Modificar una montaña\n 3.-Eliminar una montaña\n 4.-Buscar una montaña\n 5.-Salir", 1, 5);
 			    
 		
 			 switch (opcion) {
 			 
 			 case 1://Añadir a los arrays de la base de datos
 				 
-				 anadido=false;
+				 anadido=false;  //inicializo el booleano en false, porque estaría en true del último uso
 				 
-				 if (contador<longMontana){ //condición para que no deje ejecutar si el array está lleno
-					 
-					 do {     
+				 if (contador<longMontana){ //condición para que no deje ejecutar si el array está lleno. Si ahay algún null de inicio o algún 
+					 						//hueco vacio de algún dato borrado
+					 do {                  
 						 if (montana[contador1]==null || montana[contador1].equals("")) {
 								
 							 						 
-								 for (int i=0;i<1 ;i++) {
-									 montana[contador1]=metodosCRUD.pedirString("Introduce el nombre de la montaña que quieres introducir en tu Base de datos");  
-								 }
-								 for (int i=0; i<1;i++) {
+								 for (int i=0;i<1 ;i++) { //con el bucle for relleno los arrays en la posición vacia o null
+									 montana[contador1]=metodosCRUD.pedirString("Introduce el nombre de la montaña que quieres introducir en tu Base de datos"); 
 									 altura[contador1]=metodosCRUD.pedirInt("Intruduce su altura en metros");
-								 }
-								 for (int i=0; i<1;i++) {
 									 puntoInicio[contador1]=metodosCRUD.pedirString("¿Desde donde quieres subir?");
-							     }
-							     for (int i=0; i<1;i++) {
 									 desnivel[contador1]=metodosCRUD.pedirInt("¿Que desnivel hay desde ese punto?");
-								 }	 
-							 
-							     System.out.println(Arrays.toString(montana));
-								 System.out.println(Arrays.toString(altura));
-								 System.out.println(Arrays.toString(puntoInicio));
-								 System.out.println(Arrays.toString(desnivel));
-								 contador++;    
+								 }
+								
+								 metodosCRUD.muestraArrayS(montana);  //Método wque me muestra el contenido del array tipo String
+								 
+								 contador++;    //contador que gestiona el total de posiciones del array
 								 anadido=true;	
 						 }     
 					             			            
-						         contador1++;  //para que sume 1 al indide del array 
+						         contador1++;  //contador que gestiona la posición indice dentro del array
 						         
 						         
 			    		}while(!anadido);
@@ -92,17 +84,10 @@ public class GestionCRUD {
 		    	   }else {         //Si contador1 es mayor que longmontana. El array está lleno
 							 
 							 System.out.println("La base de datos está llena");
-							 System.out.println(Arrays.toString(montana));
-							 System.out.println(Arrays.toString(altura));
-							 System.out.println(Arrays.toString(puntoInicio));
-							 System.out.println(Arrays.toString(desnivel));
-							 
-			       
-				 
+							 metodosCRUD.muestraArrayS(montana);
+							 				 
 				 }
-				  
-				 
-				 
+			 
 			      break;
 		 
 			 case 2: //Modificar una montaña
