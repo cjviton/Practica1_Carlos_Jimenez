@@ -38,9 +38,8 @@ public class GestionCRUD {
 
 		String montanaFind;
 		int posicionMontanaFind;
-		int contador4 = 0;
-		boolean encontrado4 = false;
-
+		
+		
 		while (opcion != 5) { // El switch se debe repetir hasta que elija la opción 5 Salir
 
 			// Pregunto al usuario que opcion quiere realizar. Con el método pedir rango si
@@ -63,8 +62,7 @@ public class GestionCRUD {
 
 							for (int i = 0; i < 1; i++) { // con el bucle for relleno los arrays en la posición vacía o
 															// null
-								montana[contador1] = metodosCRUD.pedirString(
-										"Introduce el nombre de la montaña que quieres introducir en tu Base de datos");
+								montana[contador1] = metodosCRUD.pedirString("Introduce el nombre de la montaña que quieres introducir en tu Base de datos");
 								altura[contador1] = metodosCRUD.pedirInt("Intruduce su altura en metros");
 								puntoInicio[contador1] = metodosCRUD.pedirString("¿Desde donde quieres subir?");
 								tiempo[contador1] = metodosCRUD.pedirInt("¿Cuánto tiempo se tarda?");
@@ -80,6 +78,7 @@ public class GestionCRUD {
 
 				} else { // Si contador1 es mayor que longmontana. El array está lleno
 					System.out.println("La base de datos está llena");
+					metodosCRUD.mostrarTexto("Estas son las montañas que tienes en tu base de datos");
 					metodosCRUD.muestraArrayS(montana);
 				}
 
@@ -108,19 +107,16 @@ public class GestionCRUD {
 					do {
 						if (montana[contador2].equals(montanaout)) {
 							montana[contador2] = montanain; // Cambia la que quiero quitar por la nueva
-							altura[contador2] = metodosCRUD.pedirInt("Intruduce su altura en metros");
+							altura[contador2] = metodosCRUD.pedirInt("Introduce su altura en metros");
 							puntoInicio[contador2] = metodosCRUD.pedirString("¿Desde donde quieres subir?");
 							tiempo[contador2] = metodosCRUD.pedirInt("¿Cuánto tiempo se tarda?");
 							encontrado2 = true;
 						}
 						contador2++; // sumo 1 al contador que gestiona el indice dentro del array
 					} while (contador2 < longMontana && !encontrado2);
-
-					metodosCRUD.muestraArrayS(montana); // Muestro los arrays para que el usuario pueda ver su estado
-														// despues de los cambios
-					metodosCRUD.muestraArrayI(altura);
-					metodosCRUD.muestraArrayS(puntoInicio);
-					metodosCRUD.muestraArrayI(tiempo);
+					
+					metodosCRUD.mostrarTexto("Estas son las montañas que tienes en tu base de datos");
+					metodosCRUD.muestraArrayS(montana); // Muestro los arrays para que el usuario pueda ver su estado despues de los cambios
 				}
 				break;
 
@@ -134,7 +130,7 @@ public class GestionCRUD {
 																// hay. Si son 4 (todos) lanza mensaje "no hay datos que
 																// modificar"
 				if (arrayVacio == 4) {
-					metodosCRUD.mostrarTexto("No hay datos que modificar¡");
+					metodosCRUD.mostrarTexto("No hay datos que eliminar¡");
 				} else {
 					metodosCRUD.mostrarTexto("Estás son las montañas que tienes en tu base de datos");
 					metodosCRUD.muestraArrayS(montana);
@@ -146,7 +142,7 @@ public class GestionCRUD {
 
 							montana[contador3] = ""; // En el indice que elimine el numbre introducira un espacio
 							altura[contador3] = 0;
-							puntoInicio[contador3] = null;
+							puntoInicio[contador3] ="";
 							tiempo[contador3] = 0;
 
 							encontrado3 = true;
@@ -157,21 +153,14 @@ public class GestionCRUD {
 						contador3++; // sumo 1 al contador que gestiona el indice dentro del array
 					} while (contador3 < longMontana && !encontrado3);
 
+				
+				metodosCRUD.mostrarTexto("Estás son las montañas que tienes en tu base de datos");
+				metodosCRUD.muestraArrayS(montana); // Muestro los arrays para que el usuario pueda ver su estado despues de los cambios				
 				}
-
-				metodosCRUD.muestraArrayS(montana); // Muestro los arrays para que el usuario pueda ver su estado
-													// despues de los cambios
-				metodosCRUD.muestraArrayI(altura);
-				metodosCRUD.muestraArrayS(puntoInicio);
-				metodosCRUD.muestraArrayI(tiempo);
-
 				break;
 
 			case 4:
-				contador4 = 0; // inicializo el contador del indice del array y restauro el booleano por si ha
-								// sido usado
-				encontrado4 = false;
-
+				
 				arrayVacio = metodosCRUD.NumeroNull(montana); // El método me cuenta el numero de indices vacíos que
 																// hay. Si son 4 (todos) lanza mensaje "no hay datos que
 																// modificar"
@@ -189,10 +178,10 @@ public class GestionCRUD {
 					metodosCRUD.mostrarTexto("La montaña seleccionada es: " + montanaFind);
 					metodosCRUD
 							.mostrarTexto("La altura de esta montaña son " + altura[posicionMontanaFind] + " metros");
-					metodosCRUD.mostrarTexto("Es aconsejable iniciar la marcha para el ascenso desde "
+					metodosCRUD.mostrarTexto("Puedes iniciar la marcha desde "
 							+ puntoInicio[posicionMontanaFind]);
-					metodosCRUD.mostrarTexto("El tiempo estimado para el ascenso es de " + tiempo[posicionMontanaFind]
-							+ "horas sin contar las paradas");
+					metodosCRUD.mostrarTexto("El tiempo estimado para realizar el trekking es de " + tiempo[posicionMontanaFind]
+							+ " horas, sin contar las paradas");
 					metodosCRUD.mostrarTexto("");
 
 					break;

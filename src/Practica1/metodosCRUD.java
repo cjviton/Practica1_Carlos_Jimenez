@@ -72,6 +72,7 @@ public static void muestraArrayS(String[] array) {
 	  for (int i = 0; i < array.length; i++) {
 	    System.out.print(array[i] + " ,");
 	  }
+	  System.out.println("   ");
 	}	
 
 
@@ -83,6 +84,7 @@ public static void muestraArrayI(int[] array) {
 	  for (int i = 0; i < array.length; i++) {
 	    System.out.print(array[i] + " ,");
 	  }
+	  System.out.println("   ");
 	}	
 
 
@@ -136,10 +138,6 @@ public static int buscarPosicionArray(String[] lista, String nombre) {
 	return posicion;
 	
 }
-
-
-
-
 	
 
 }
