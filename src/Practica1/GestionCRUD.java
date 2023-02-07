@@ -6,7 +6,6 @@ public class GestionCRUD {
 
 	public static void main(String[] args) {
 
-		// no referencio código porque no hay nada copiado
 
 		// Crear 4 arrays con datos con 20 posiciones
 		// Array Nombre de la Montaña
