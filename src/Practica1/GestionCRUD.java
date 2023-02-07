@@ -2,17 +2,23 @@ package Practica1;
 
 import java.util.Arrays;
 
+/**
+ * Crear 4 arrays con datos relaccionados con un máximo de 20 posiciones.
+ * Array Nombre de la Montaña.
+ * Array Atura.
+ * Array puntoDePartida.
+ * Array tiempo de actividad.
+ * Permitira sobre menú, añadir, modificar,eliminar,consultar y salir.
+ *  @author Carlos_jiménez.
+ *  @version 1.0
+ *  @fecha 2023/01/07
+ */
+
 public class GestionCRUD {
 
 	public static void main(String[] args) {
 
-
-		// Crear 4 arrays con datos con 20 posiciones
-		// Array Nombre de la Montaña
-		// Array Atura
-		// Array puntoDePartida
-		// Array tiempo
-
+	
 		String[] montana = new String[4];
 		int longMontana = montana.length;
 		int[] altura = new int[4];
