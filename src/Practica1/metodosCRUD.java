@@ -137,11 +137,11 @@ public class metodosCRUD {
 	 * Método para buscar la posición de un String dentro de un array.
 	 * @author Carlos_Jiménez
 	 * @version 1.0
-	 * @param lista Nombre del array del que se mostrará el contenido.
+	 * @param lista Nombre del array tipo String del que se mostrará el contenido.
 	 * @param nombre Nombre que quieres buscar en el array
 	 * @return Devuelve un numero entero
 	 */
-	public static int buscarPosicionArray(String[] lista, String nombre) {
+	public static int buscarPosicionArrayS(String[] lista, String nombre) {
 
 		int longitud = lista.length;
 		int i = 0;
@@ -151,6 +151,35 @@ public class metodosCRUD {
 		if (longitud > 0) {
 			do {
 				if (lista[i].equals(nombre)) {
+					posicion = i;
+					encontrado = true;
+				}
+				i++;
+			} while (i < longitud && !encontrado);
+		}
+
+		return posicion;
+
+	}
+	
+	/**
+	 * Método para buscar la posición de un Int dentro de un array.
+	 * @author Carlos_Jiménez
+	 * @version 1.0
+	 * @param lista Nombre del array tipo Int del que se mostrará el contenido.
+	 * @param nombre Número que quieres buscar en el array
+	 * @return Devuelve un numero entero
+	 */
+	public static int buscarPosicionArrayI(int[] lista, int numero) {
+
+		int longitud = lista.length;
+		int i = 0;
+		int posicion = -1;
+		boolean encontrado = false;
+
+		if (longitud > 0) {
+			do {
+				if (lista[i]==numero) {
 					posicion = i;
 					encontrado = true;
 				}
